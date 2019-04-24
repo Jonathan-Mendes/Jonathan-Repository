@@ -7,6 +7,16 @@ var g5 = 0
 var g6 = 0
 var g7 = 0
 var g8 = 0
+var j1 = 0
+var j2 = 0
+var j3 = 0
+var j4 = 0
+var j5 = 0
+var j6 = 0
+var j7 = 0
+var j8 = 0
+
+
 
 start()
 
@@ -105,10 +115,10 @@ function trocaPlayer(){
 
 function endereco(end){
 	if(jogador === 1){
-		console.log("jogador1")
+		// console.log("jogador1")
 		return "img/x.jpg"
 	}else if(jogador === 2){
-		console.log("jogador2")
+		// console.log("jogador2")
 		return "img/o.jpg"
 	}
 }
@@ -116,72 +126,152 @@ function endereco(end){
 function validar(v){
 	
 	if(v === 'a1'){
-		g1++
-		g4++
-		g7++
-		if(g1 === 3 || g4 === 3 || g7 === 3){
-			console.log("entrou")
-			playerWin()
-		}
+		
+		if(jogador === 1){
+			g1++
+			g4++
+			g7++
+			if(g1 === 3 || g4 === 3 || g7 === 3){
+				player2Win()
+			}
+		}else{
+			j1++
+			j4++
+			j7++
+			if(j1 === 3 || j4 === 3 || j7 === 3){
+				player1Win()
+			}
+		}	
 	}else if(v === 'a2'){
-		g1++
-		g5++
-		if(g1 === 3 || g5 ===  3){
-			playerWin()
+		
+		if(jogador === 1){
+			g1++
+			g5++
+			if(g1 === 3 || g5 ===  3){
+				player2Win()
+			}
+		}else{
+			j1++
+			j5++
+			if(j1 === 3 || j5 === 3){
+				player1Win()
+			}
 		}
 	}else if(v === 'a3'){
-		g1++
-		g6++
-		g8++
-		
-		if(g1 === 3 || g6 ===  3 || g8 === 3){
-			playerWin()
-		}
+		if(jogador === 1){
+			g1++
+			g6++
+			g8++
+			if(g1 === 3 || g6 ===  3 || g8 === 3){
+				player2Win()
+			}
+		}else{
+				j1++
+				j6++
+				j8++
+				if(j1 === 3 || j6 === 3 || j8 === 3){
+					player1Win()
+				}
+			}
 	}else if(v === 'b1'){
-		g2++
-		g4++
-		if(g2 === 3 || g4 ===  3){
-			playerWin()
+		if(jogador === 1){
+			g2++
+			g4++
+			if(g2 === 3 || g4 ===  3){
+				player2Win()
+			}
+		}else{
+			j2++
+			j4++
+			if(j2 === 3 || j4 === 3){
+				player1Win()
+			}
 		}
 	}else if(v === 'b2'){
-		g2++
-		g5++
-		g7++
-		g8++
-		if(g2 === 3 || g5 ===  3 || g7 === 3 || g8 === 3){
-			playerWin()
+		if(jogador === 1){
+			g2++
+			g5++
+			g7++
+			g8++
+			if(g2 === 3 || g5 ===  3 || g7 === 3 || g8 === 3){
+				player2Win()
+			}
+		}else{
+			j2++
+			j5++
+			j7++
+			j8++
+			if(j2 === 3 || j5 === 3 || j7 === 3 || j8 === 3){
+				player1Win()
+			}	
 		}
 	}else if(v === 'b3'){
-		g2++
-		g6++
-		if(g2 === 3 || g6 ===  3){
-			playerWin()
-		}
-	}
-	else if(v === 'c1'){
-		g3++
-		g4++
-		g8++
-		if(g3 === 3 || g4 ===  3 || g8 === 3){
-			playerWin()
-		}
-	}
-	else if(v === 'c2'){
-		g3++
-		g5++
-		if(g3 === 3 || g5 ===  3){
-			playerWin()
+		if(jogador === 1){
+			g2++
+			g6++
+			if(g2 === 3 || g6 ===  3){
+				player2Win()
+			}
+		}else{
+			j2++
+			j6++
+			if(j2 === 3 || j6 === 3){
+				player1Win()
+			}
+			}
+	}else if(v === 'c1'){
+		if(jogador === 1){
+			g3++
+			g4++
+			g8++
+			if(g3 === 3 || g4 ===  3 || g8 === 3){
+				player2Win()
+			}
+		}else{
+			j3++
+			j4++
+			j8++
+			if(j3 === 3 || j4 === 3 || j8 === 3){
+				player1Win()
+				}
+			}
+	}else if(v === 'c2'){
+		if(jogador === 1){
+			g3++
+			g5++
+			if(g3 === 3 || g5 ===  3){
+				player2Win()
+			}
+		}else{
+			j3++
+			j5++
+			if(j3 === 3 || j5 === 3){
+				player1Win()
+			}
 		}
 	}
 	else if(v === 'c3'){
-		g3++
-		g6++
-		g7++
-		if(g3 === 3 || g6 ===  3 || g7 === 3){
-			playerWin()
+		if(jogador === 1){
+			g3++
+			g6++
+			g7++
+			if(g3 === 3 || g6 ===  3 || g7 === 3){
+				player2Win()
+			}
+		}else{
+			j3++
+			j6++
+			j7++
+			if(j3 === 3 || j6 === 3 || j7 === 3){
+				player1Win()
+			}
 		}
 	}
 }
-function playerWin(){
-	console.log("ganhou")
+function player2Win(){
+	console.log("player 2 ganhou")
+}
+
+function player1Win(){
+	console.log("Player 1 ganhou")
 }
