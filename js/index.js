@@ -15,8 +15,9 @@ var j5 = 0
 var j6 = 0
 var j7 = 0
 var j8 = 0
-
-
+p1 = 0
+p2 = 0
+fim = true
 
 start()
 
@@ -34,68 +35,96 @@ function play(player){
 	var imgC1 = document.getElementById('c1')
 	var imgC2 = document.getElementById('c2')
 	var imgC3 = document.getElementById('c3')
-	
+	var btnReniciar = document.getElementById('btnReniciar')
+	var btnContinuar = document.getElementById('btnContinuar')
+
+	btnContinuar.onclick = function(){
+		continueGame()
+	}
+
+	btnReniciar.onclick = function(){
+		history.go(0)
+	}
+
 	imgA1.onclick = function(){
-		if(imgA1){
+		if(imgA1 && fim){
 			trocaImg(imgA1)
 			imgA1 = false
 			validar('a1')
+		}else{
+			verificar(imgA1)
 		}
 	}
 	imgA2.onclick = function(){
-		if(imgA2){
+		if(imgA2 && fim){
 			trocaImg(imgA2)
 			imgA2 = false
 			validar('a2')
+		}else{
+			verificar(imgA2)
 		}
 	}
 	imgA3.onclick = function(){
-		if(imgA3){
+		if(imgA3 && fim){
 			trocaImg(imgA3)
 			imgA3 = false
 			validar('a3')
+		}else{
+			verificar(imgA3)
 		}
 	}
 	imgB1.onclick = function(){
-		if(imgB1){
+		if(imgB1 && fim){
 			trocaImg(imgB1)
 			imgB1 = false
 			validar('b1')
+		}else{
+			verificar(imgB1)
 		}
 	}
 	imgB2.onclick = function(){
-		if(imgB2){
+		if(imgB2 && fim){
 			trocaImg(imgB2)
 			imgB2 = false
 			validar('b2')
+		}else{
+			verificar(imgB2)
 		}
 	}
 	imgB3.onclick = function(){
-		if(imgB3){
+		if(imgB3 && fim){
 			trocaImg(imgB3)
 			imgB3 = false
 			validar('b3')
+		}else{
+			verificar(imgB3)
 		}
 	}
 	imgC1.onclick = function(){
-		if(imgC1){
+		if(imgC1 && fim){
 			trocaImg(imgC1)
 			imgC1 = false
 			validar('c1')
+		}else{
+			verificar(imgC1)
 		}
 	}
 	imgC2.onclick = function(){
-		if(imgC2){
+		if(imgC2 && fim){
 			trocaImg(imgC2)
 			imgC2 = false
 			validar('c2')
+		}else{
+			verificar(imgC2)
 		}
 	}
 	imgC3.onclick = function(){
-		if(imgC3){
+		if(imgC3 && fim){
 			trocaImg(imgC3)
 			imgC3 = false
 			validar('c3')
+		}else{
+			verificar(imgC3)
 		}
 	}
 }
@@ -268,10 +297,89 @@ function validar(v){
 		}
 	}
 }
-function player2Win(){
-	console.log("player 2 ganhou")
-}
 
 function player1Win(){
-	console.log("Player 1 ganhou")
+	// console.log("Player 1 ganhou")
+	finish()
+	imprimeResult("Player 1 Venceu")
+	imprimePlacar(1)
+}
+
+function player2Win(){
+	// console.log("player 2 ganhou")
+	finish()
+	imprimeResult("Player 2 Venceu")
+	imprimePlacar(2)
+}
+
+function imprimeResult(x){
+	var result = document.getElementById('result')
+	result.innerHTML = x
+
+}
+
+function imprimePlacar(index){
+	var placarPlayer1 = document.getElementById('resultP1')
+	var placarPlayer2 = document.getElementById('resultP2') 
+	
+	if(index === 1){
+		p1 = p1 + 1
+        placarPlayer1.innerHTML =  p1
+	}else{
+		p2 = p2 + 1
+        placarPlayer2.innerHTML =  p2
+	}
+}
+
+function finish(){
+	fim = false
+}
+
+function continueGame(){
+	var a1 = document.getElementById('a1')
+	var a2 = document.getElementById('a2')
+	var a3 = document.getElementById('a3')
+	var b1 = document.getElementById('b1')
+	var b2 = document.getElementById('b2')
+	var b3 = document.getElementById('b3')
+	var c1 = document.getElementById('c1')
+	var c2 = document.getElementById('c2')
+	var c3 = document.getElementById('c3')
+	var end = "../img/neutro.png"
+
+	imprimeResult('')
+	a1.src = end
+	a2.src = end
+	a3.src = end
+	b1.src = end
+	b2.src = end
+	b3.src = end
+	c1.src = end
+	c2.src = end
+	c3.src = end
+
+	fim = true
+
+	zerar()
+	play()
+}
+
+function zerar(){
+	var jogador = 1
+	g1 = 0
+	g2 = 0
+	g3 = 0
+	g4 = 0
+	g5 = 0
+	g6 = 0
+	g7 = 0
+	g8 = 0
+	j1 = 0
+	j2 = 0
+	j3 = 0
+	j4 = 0
+	j5 = 0
+	j6 = 0
+	j7 = 0
+	j8 = 0
 }
