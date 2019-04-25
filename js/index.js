@@ -35,8 +35,13 @@ function play(player){
 	var imgC1 = document.getElementById('c1')
 	var imgC2 = document.getElementById('c2')
 	var imgC3 = document.getElementById('c3')
+	var btnVoltar = document.getElementById('btnVoltar')
 	var btnReniciar = document.getElementById('btnReniciar')
 	var btnContinuar = document.getElementById('btnContinuar')
+
+	btnVoltar.onclick = function(){
+		window.location = "index.html"
+	}
 
 	btnContinuar.onclick = function(){
 		continueGame()
